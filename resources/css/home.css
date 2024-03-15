@@ -1,0 +1,50 @@
+body {
+    background-image: url("https://th.bing.com/th/id/R.e4e6b445294fda371ae2eefe18470ce1?rik=ChfrVeIX36VSpg&pid=ImgRaw&r=0");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.articleform {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.articleform label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.articleform input,
+.articleform textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black;
+}
+.articleform textarea {
+    color: black;
+}
+
+.articleform button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.articleform button:hover {
+    background-color: #0056b3;
+}
+.articleform input#title {
+    margin-bottom: 20px;
+}
+.articleform textarea#content {
+    margin-bottom: 20px;
+}
