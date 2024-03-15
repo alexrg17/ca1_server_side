@@ -114,4 +114,20 @@ class PostsController extends Controller
             ->with('message', 'Your post has been updated!');
     }
 
-    
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($slug)
+    {
+        $post = Post::where('slug', $slug);
+        $post->delete();
+
+        return redirect('/blog')
+            ->with('message', 'Your post has been deleted!');
+    }
+   
+}
+
