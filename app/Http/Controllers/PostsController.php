@@ -128,6 +128,14 @@ class PostsController extends Controller
         return redirect('/blog')
             ->with('message', 'Your post has been deleted!');
     }
-   
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    $posts = Post::where('title', 'LIKE', "%{$query}%")->get();
+
+    return view('blog.index')->with('posts', $posts);
+}
+
 }
 
