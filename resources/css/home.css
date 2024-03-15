@@ -1,50 +1,45 @@
-body {
-    background-image: url("https://th.bing.com/th/id/R.e4e6b445294fda371ae2eefe18470ce1?rik=ChfrVeIX36VSpg&pid=ImgRaw&r=0");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.articleform {
-    width: 100%;
-    max-width: 600px;
+.custom-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.articleform label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-}
-
-.articleform input,
-.articleform textarea {
+.custom-form label {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: black;
-}
-.articleform textarea {
-    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #343a40;
+    text-align: left;
 }
 
-.articleform button {
+.custom-form input,
+.custom-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.custom-form button {
     padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
-.articleform button:hover {
+.custom-form button:hover {
     background-color: #0056b3;
-}
-.articleform input#title {
-    margin-bottom: 20px;
-}
-.articleform textarea#content {
-    margin-bottom: 20px;
 }

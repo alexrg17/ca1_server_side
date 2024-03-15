@@ -27,7 +27,7 @@ class ArticleController extends Controller
     }
     public function createArticle($postId)
     {
-        session(['globalvariable' => $postId]);
+        session(['GBvariable' => $postId]);
         return view('blog.Article');
     }
 }
