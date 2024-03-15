@@ -62,25 +62,3 @@
                         Edit
                     </a>
                 </span>
-<a href = "{{route ('Createarticleroute', ['id'=>$post])}}" ><button>Create article </button></a>
-                <span class="float-right">
-                     <form 
-                        action="/blog/{{ $post->slug }}"
-                        method="POST">
-                        @csrf
-                        @method('delete')
-
-                        <button
-                            class="text-red-500 pr-3"
-                            type="submit">
-                            Delete
-                        </button>
-
-                    </form>
-                </span>
-            @endif
-        </div>
-    </div>    
-@endforeach
-
-@endsection
