@@ -57,7 +57,7 @@
                         Edit
                     </a>
                 </span>
-
+<a href = "{{route ('Createarticleroute', ['id'=>$post])}}" ><button>Create article </button></a>
                 <span class="float-right">
                      <form 
                         action="/blog/{{ $post->slug }}"

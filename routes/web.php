@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
-
+use App\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +16,9 @@ use App\Http\Controllers\PostsController;
 */
 
 Route::get('/', [PagesController::class, 'index']);
+Route::post('/articles', 'ArticleController@store')->name('articles.store');
 
+Route::get('{id}/Createarticle', [ArticleController::class, 'Createarticle'])->name('Createarticleroute');
 Route::resource('/blog', PostsController::class);
 
 Auth::routes();
