@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="background-image grid grid-cols-1 m-auto">
+    <div class="background-image grid grid-cols-1 m-auto bg-gray-900">
         <div class="flex text-gray-100 pt-10">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
                 <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
-                    Do you want to become a developer?
+                    Welcome to the Watchful Eye Blog
                 </h1>
                 <a 
                     href="/blog"
-                    class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
-                    Read More
+                    class="text-center bg-yellow-500 text-gray-900 py-2 px-4 font-bold text-xl uppercase hover:bg-yellow-600 hover:text-gray-100 transition duration-300">
+                    Explore More
                 </a>
             </div>
         </div>
@@ -22,42 +22,42 @@
         </div>
 
         <div class="m-auto sm:m-auto text-left w-4/5 block">
-            <h2 class="text-3xl font-extrabold text-gray-600">
-                Struggling to be a better web developer?
+            <h2 class="text-3xl font-extrabold text-gray-700">
+                Discover the World of Watches
             </h2>
             
-            <p class="py-8 text-gray-500 text-s">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus.
+            <p class="py-8 text-gray-600 text-s">
+                Dive into the intricate details, craftsmanship, and stories behind your favorite timepieces.
             </p>
 
-            <p class="font-extrabold text-gray-600 text-s pb-9">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente magnam vero nostrum! Perferendis eos molestias porro vero. Vel alias.
+            <p class="font-extrabold text-gray-700 text-s pb-9">
+                Explore different styles, brands, and technologies shaping the watch industry today.
             </p>
 
             <a 
                 href="/blog"
-                class="uppercase bg-blue-500 text-gray-100 text-s font-extrabold py-3 px-8 rounded-3xl">
-                Find Out More
+                class="uppercase bg-green-500 text-gray-100 text-s font-extrabold py-3 px-8 rounded-3xl hover:bg-green-600 hover:text-gray-100 transition duration-300">
+                Read More
             </a>
         </div>
     </div>
 
-    <div class="text-center p-15 bg-black text-white">
+    <div class="text-center p-15 bg-gray-800 text-white">
         <h2 class="text-2xl pb-5 text-l"> 
-            I'm an expert in...
+            Topics We Cover
         </h2>
 
         <span class="font-extrabold block text-4xl py-1">
-            Ux Design
+            Watch Design
         </span>
         <span class="font-extrabold block text-4xl py-1">
-            Project Management
+            Watchmaking Techniques
         </span>
         <span class="font-extrabold block text-4xl py-1">
-            Digital Strategy
+            Luxury Watch Brands
         </span>
         <span class="font-extrabold block text-4xl py-1">
-            Backend Development
+            Watch Collecting Tips
         </span>
     </div>
 
@@ -70,26 +70,26 @@
             Recent Posts
         </h2>
 
-        <p class="m-auto w-4/5 text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem saepe enim veritatis, eos temporibus quaerat facere consectetur qui.
+        <p class="m-auto w-4/5 text-gray-600">
+            Stay updated with the latest trends, reviews, and insights from the world of watches.
         </p>
     </div>
 
     <div class="sm:grid grid-cols-2 w-4/5 m-auto">
-        <div class="flex bg-yellow-700 text-gray-100 pt-10">
+        <div class="flex bg-yellow-500 text-gray-900 pt-10">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
                 <span class="uppercase text-xs">
-                    PHP
+                    Watch Technology
                 </span>
 
                 <h3 class="text-xl font-bold py-10">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas necessitatibus dolorum error culpa laboriosam. Enim voluptas earum repudiandae consequuntur ad? Expedita labore aspernatur facilis quasi ex? Nemo hic placeat et?
+                    Explore the innovative technologies revolutionizing the way we perceive and use watches.
                 </h3>
 
                 <a 
                     href=""
-                    class="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-                    Find Out More
+                    class="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl hover:bg-gray-700 hover:border-gray-200 transition duration-300">
+                    Dive In
                 </a>
             </div>
         </div>
