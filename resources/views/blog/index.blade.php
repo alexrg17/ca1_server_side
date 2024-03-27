@@ -27,11 +27,6 @@
 @if (Auth::check())
     <div class="pt-10 pb-6 text-center">
         <a href="/blog/create" class="bg-yellow-500 text-gray-100 py-3 px-6 rounded-lg uppercase font-bold hover:bg-yellow-600">Create post</a>
-        <!-- @if ($posts->isNotEmpty())
-            <a href="{{ route('Createarticleroute', ['id' => $posts->first()->id]) }}" class="bg-yellow-500 text-gray-100 py-3 px-6 rounded-lg uppercase font-bold hover:bg-yellow-600 ml-4">Create article</a>
-        @else -->
-            <!-- Handle case where there are no posts -->
-        <!-- @endif -->
     </div>
 @endif
 
@@ -57,11 +52,10 @@
 
             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                 <div class="mt-4">
-                <a href="{{ route('Createarticleroute', ['id'=>$post]) }}" class="bg-yellow-500 text-gray-100 py-3 px-6 rounded-lg uppercase font-bold hover:bg-yellow-600">Create article</a>
+                <a href="{{ route('Createarticleroute', ['id'=>$post]) }}" class="bg-yellow-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-yellow-600">Create article</a>
                     <a href="/blog/{{ $post->slug }}/edit" class="bg-yellow-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-yellow-600">Edit</a>
                     
-
-                    <form action="/blog/{{ $post->slug }}" method="POST" class="inline">
+                   <form action="/blog/{{ $post->slug }}" method="POST" class="inline">
                         @csrf
                         @method('delete')
                         <button type="submit" class="bg-red-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-red-600 focus:outline-none">Delete</button>
