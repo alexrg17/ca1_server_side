@@ -2,15 +2,17 @@
 
 @section('content')
 
-<div class="w-4/5 m-auto text-center">
-    <div class="py-15 border-b border-gray-200">
-        <h1 class="text-6xl">
-            Blog Posts
-        </h1>
-        <form action="{{ route('search') }}" method="GET">
-    <input type="text" name="query" placeholder="Search posts">
-    <input type="submit" value="Search">
-</form>
+<div class="background-image grid grid-cols-1 m-auto bg-yellow-300">
+    <div class="flex text-gray-900 pt-10">
+        <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
+            <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
+                Blog Posts
+            </h1>
+            <form action="{{ route('search') }}" method="GET" class="py-6 px-6">
+                <input type="text" name="query" placeholder="Search posts" class="border border-gray-300 rounded-lg py-2 px-4">
+                <button type="submit" class="bg-blue-500 text-gray-100 py-2 px-4 rounded-lg ml-2 hover:bg-blue-600">Search</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -23,61 +25,45 @@
 @endif
 
 @if (Auth::check())
-    <div class="pt-15 w-4/5 m-auto">
-        <a 
-            href="/blog/create"
-            class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-            Create post
-        </a>
+    <div class="pt-10 pb-6 text-center">
+        <a href="/blog/create" class="bg-yellow-500 text-gray-100 py-3 px-6 rounded-lg uppercase font-bold hover:bg-yellow-600">Create post</a>
+        @if ($posts->isNotEmpty())
+            <a href="{{ route('Createarticleroute', ['id' => $posts->first()->id]) }}" class="bg-yellow-500 text-gray-100 py-3 px-6 rounded-lg uppercase font-bold hover:bg-yellow-600 ml-4">Create article</a>
+        @else
+            <!-- Handle case where there are no posts -->
+        @endif
     </div>
 @endif
 
 @foreach ($posts as $post)
-    <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
+    <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-10 border-b border-gray-200">
         <div>
-            <img src="{{ asset('images/' . $post->image_path) }}" alt="">
+            <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="rounded-lg">
         </div>
-        <div>
-            <h2 class="text-gray-700 font-bold text-5xl pb-4">
+        <div class="flex flex-col justify-center">
+            <h2 class="text-gray-900 font-bold text-3xl pb-4">
                 {{ $post->title }}
             </h2>
 
-            <span class="text-gray-500">
+            <p class="text-gray-700">
                 By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
-            </span>
+            </p>
 
-            <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
+            <p class="text-gray-700 pt-4 pb-6 leading-7">
                 {{ $post->description }}
             </p>
 
-            <a href="/blog/{{ $post->slug }}" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-                Keep Reading
-            </a>
+            <a href="/blog/{{ $post->slug }}" class="bg-blue-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-blue-600">Keep Reading</a>
 
             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                <span class="float-right">
-                    <a 
-                        href="/blog/{{ $post->slug }}/edit"
-                        class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
-                        Edit
-                    </a>
-                </span>
-                <a href = "{{route ('Createarticleroute', ['id'=>$post])}}" ><button>Create article </button></a>
-                <span class="float-right">
-                     <form 
-                        action="/blog/{{ $post->slug }}"
-                        method="POST">
+                <div class="mt-4">
+                    <a href="/blog/{{ $post->slug }}/edit" class="bg-yellow-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-yellow-600">Edit</a>
+                    <form action="/blog/{{ $post->slug }}" method="POST" class="inline">
                         @csrf
                         @method('delete')
-
-                        <button
-                            class="text-red-500 pr-3"
-                            type="submit">
-                            Delete
-                        </button>
-
+                        <button type="submit" class="bg-red-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-red-600 focus:outline-none">Delete</button>
                     </form>
-                </span>
+                </div>
             @endif
         </div>
     </div>    
