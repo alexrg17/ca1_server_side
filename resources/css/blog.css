@@ -1,35 +1,30 @@
-/* blog.css */
-
-/* Center the form vertically and horizontally */
 .flex.items-center.justify-center {
     height: 100vh;
 }
 
-/* Form container */
 .bg-yellow-300 {
     background-color: #fff;
-    border-radius: 0.75rem; /* 12px */
+    border-radius: 0.75rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Maximum width */
+    width: 80%;
+    max-width: 600px;
 }
 
 /* Form inputs */
 input[type="text"],
 textarea {
     border: 1px solid #cbd5e0;
-    border-radius: 0.375rem; /* 6px */
-    padding: 0.75rem; /* 12px */
+    border-radius: 0.375rem;
+    padding: 0.75rem;
     width: 100%;
     margin-bottom: 1rem;
 }
 
-/* Form submit button */
 button[type="submit"] {
     background-color: #3f83f8;
     border: none;
-    border-radius: 0.375rem; /* 6px */
+    border-radius: 0.375rem;
     color: white;
     cursor: pointer;
     padding: 0.5rem 1rem;
