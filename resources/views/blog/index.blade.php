@@ -53,7 +53,7 @@
             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                 <div class="mt-4">
                 <a href="{{ route('Createarticleroute', ['id'=>$post]) }}" class="bg-yellow-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-yellow-600">Create article</a>
-                <a href="" class="bg-yellow-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-yellow-600">Show Article </a>
+                <a href="{{route('showarticle',['id'=>$post])}}" class="bg-yellow-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-yellow-600">Show Article </a>
                     <a href="/blog/{{ $post->slug }}/edit" class="bg-yellow-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-yellow-600">Edit</a>
                     
                    <form action="/blog/{{ $post->slug }}" method="POST" class="inline">
