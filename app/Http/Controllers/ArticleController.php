@@ -7,6 +7,7 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
+    
     public function store(Request $request)
     {
         // Validate the incoming request data
@@ -22,6 +23,9 @@ class ArticleController extends Controller
         $article->content = $validatedData['content'];
         $article->post_id = $validatedData['post_id'];
         $article->save();
+       
+       
+       
 
         return redirect()->back()->with('success', 'Article created successfully!');
     }
@@ -32,6 +36,7 @@ class ArticleController extends Controller
     }
 
     public function showarticle($postid){
+        
         $Articles=Article::where('post_id',$postid)->get();
         return view('blog/showarticle',['articles'=>$Articles]);
     }

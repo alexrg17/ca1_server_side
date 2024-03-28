@@ -48,6 +48,7 @@
                 {{ $post->description }}
             </p>
 
+           
             <a href="/blog/{{ $post->slug }}" class="bg-blue-500 text-gray-100 py-2 px-4 rounded-lg uppercase font-bold hover:bg-blue-600">Keep Reading</a>
 
             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
