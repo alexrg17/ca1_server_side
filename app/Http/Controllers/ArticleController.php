@@ -30,4 +30,8 @@ class ArticleController extends Controller
         session(['GBvariable' => $postId]);
         return view('blog.Article');
     }
+
+    public function showarticle($postId){
+        $article = Article::find($postId);
+    }
 }
