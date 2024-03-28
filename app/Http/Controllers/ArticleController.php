@@ -39,7 +39,7 @@ class ArticleController extends Controller
             return redirect('/')->with('error', 'No Article Found');
         }
     
-        return view('blog/showarticle')->with('article', $article);
+        return view('blog.showarticle')->with('article', $article);
     }
     
 }
