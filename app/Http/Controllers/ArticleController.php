@@ -35,11 +35,11 @@ class ArticleController extends Controller
         $article = Article::find($id);
     
         
-        if (!$article) {
-            return redirect('/')->with('error', 'No Article Found');
-        }
+        // if (!$article) {
+        //     return redirect('/')->with('error', 'No Article Found');
+        // }
     
-        return view('blog.showarticle')->with('article', $article);
+        return view('blog/showarticle')->with('article', $article);
     }
     
 }
