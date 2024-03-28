@@ -1,3 +1,4 @@
+<link href="{{ asset('css/blog.css') }}" rel="stylesheet">
 <div class="flex items-center justify-center h-screen">
     <div class="w-4/5 m-auto bg-yellow-300 rounded-lg shadow-md p-8">
         <form method="POST" action="{{ route('articles.store') }}">
