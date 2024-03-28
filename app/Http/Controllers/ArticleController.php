@@ -16,23 +16,21 @@ class ArticleController extends Controller
             'content' => 'required|string',
             'post_id' => 'required|exists:posts,id',
         ]);
-
-        
+    
         $article = new Article();
         $article->title = $validatedData['title'];
         $article->content = $validatedData['content'];
         $article->post_id = $validatedData['post_id'];
         $article->save();
-       
-       
-       
-
-        return redirect()->back()->with('success', 'Article created successfully!');
+    
+        // Redirect to the home page
+        return redirect('/')->with('success', 'Article created successfully!');
     }
+    
     public function createArticle($postId)
     {
         session(['GBvariable' => $postId]);
-        return view('blog.Article');
+         return view('blog/Article');
     }
 
     public function showarticle($postid){
