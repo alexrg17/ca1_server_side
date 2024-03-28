@@ -31,15 +31,9 @@ class ArticleController extends Controller
         return view('blog.Article');
     }
 
-    public function showarticle($id){
-        $article = Article::find($id);
-    
-        
-        // if (!$article) {
-        //     return redirect('/')->with('error', 'No Article Found');
-        // }
-    
-        return view('blog/showarticle')->with('article', $article);
+    public function showarticle($postid){
+        $Articles=Article::where('post_id',$postid)->get();
+        return view('blog/showarticle',['articles'=>$Articles]);
     }
     
 }

@@ -11,8 +11,5 @@ class Article extends Model
 
     protected $fillable = ['title', 'content', 'postid'];
 
-    public function post()
-    {
-        return $this->belongsTo(Post::class);
-    }
+
 }
